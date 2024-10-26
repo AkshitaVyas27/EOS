@@ -1,12 +1,13 @@
 #!/bin/bash
 
-echo "Enter the file name"
-read path
+echo "start"
 
-if [ -e $path ]
-then 
-	echo "Info about entered file is"
-	ls -l $path
+
+echo " $1 "
+if [ -e $1  ]
+then
+	t=`stat -c %y $1`
+	echo "time  : $t "
 else
-	echo "File doesn't exist"
-fi
+	echo "file doesnt exist"
+fi 
